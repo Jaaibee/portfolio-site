@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+  <div class="logo">MyPortfolio</div>
+
+  <div class="nav-right">
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#future-projects">Future Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="themeToggle">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="menu-icon" id="menuToggle">
+      <i class='bx bx-menu'></i>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- ===== HOME ===== -->
+<section id="home" class="home scroll-element">
+  <div class="home-content">
+  <h1>Hi, I am <span>WP Dev.</span></h1>
+  <p id="aboutMe">I know WP theme development</p>
+  <button id="editBtn" class="edit-btn">
+  <i class='bx bx-edit'></i> Edit
+  </button>
+  <div class="btn-group">
+    <a href="#contact" class="btn">Show Profile</a>
+    <a href="#future-projects" class="btn secondary">Know More</a>
+  </div>
+</div>
+
+
+  <!-- 👇 Profile picture here -->
+  <div class="home-img">
+    <img src="me.png" alt="Profile Picture">
+  </div>
+</section>
+
+
+  <!-- SERVICES -->
+  <section class="services scroll-element-left" id="services">
+    <h2>Our Services</h2>
+    <p>What I Can Do For You</p>
+    <div class="service-cards">
+      <div class="card">
+        <i class='bx bx-code-alt'></i>
+        <h3>Development</h3>
+        <p>I build responsive and functional websites using modern technologies to deliver seamless digital experiences.</p>
+      </div>
+      <div class="card">
+        <i class='bx bx-paint'></i>
+        <h3>Design</h3>
+        <p>Crafting visually appealing and user-friendly designs that align with your brand and engage your audience.</p>
+      </div>
+      <div class="card">
+        <i class='bx bx-search-alt'></i>
+        <h3>SEO</h3>
+        <p>Optimizing websites for search engines to improve visibility, drive traffic, and grow your online presence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURE PROJECTS / GOALS -->
+<section class="future-projects scroll-element-right" id="future-projects">
+  <h2 class="heading">Future <span>Projects</span></h2>
+  <p class="subheading">Here are some projects and goals I plan to work on:</p>
+
+  <div class="projects-container">
+    <div class="project-box">
+      <i class='bx bx-code-alt'></i>
+      <h3>Personal Blog Website</h3>
+      <p>A clean and responsive blog to share my learning journey and insights in tech.</p>
+    </div>
+
+    <div class="project-box">
+      <i class='bx bx-store'></i>
+      <h3>E-commerce Web App</h3>
+      <p>An online shop with user-friendly design and secure checkout system.</p>
+    </div>
+
+    <div class="project-box">
+      <i class='bx bx-bar-chart'></i>
+      <h3>Data Dashboard</h3>
+      <p>A real-time data visualization dashboard to analyze and display insights.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- CONTACT -->
+  <section class="contact scroll-element" id="contact">
+    <h2>Contact Me</h2>
+    <p>Feel free to get in touch with me through the form below.</p>
+
+    <div class="contact-container">
+      <form action="#" method="post" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p><i class='bx bx-envelope'></i> houtaroujaybee@gmail.com</p>
+        <p><i class='bx bx-phone'></i> +639709809460</p>
+        <p><i class='bx bx-map'></i> Butuan City, Philippines</p>
+        
+        <div class="social">
+          <a href="#"><i class='bx bxl-facebook'></i></a>
+          <a href="#"><i class='bx bxl-twitter'></i></a>
+          <a href="#"><i class='bx bxl-linkedin'></i></a>
+          <a href="#"><i class='bx bxl-instagram'></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <img src="me.png" alt="Profile">
+      <h3>Jaybee Coquilla</h3>
+      <p>Designing. Developing. Delivering.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+  <script>
+  const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('change', () => {
+  document.body.classList.toggle('light-theme');
+  cursor.style.background = document.body.classList.contains('light-theme') ? '#76c442' : '#fff';
+});
+
+</script>
+
+<script>
+  const editBtn = document.getElementById('editBtn');
+  const aboutMe = document.getElementById('aboutMe');
+
+editBtn.addEventListener('click', () => {
+  if (aboutMe.isContentEditable) {
+    aboutMe.contentEditable = "false";
+    editBtn.innerHTML = "<i class='bx bx-edit'></i> Edit";
+    aboutMe.style.border = "none";
+  } else {
+    aboutMe.contentEditable = "true";
+    editBtn.innerHTML = "<i class='bx bx-check'></i> Save";
+    aboutMe.style.border = "1px dashed #76c442";
+    aboutMe.focus();
+  }
+});
+</script>
+
+<div class="cursor"></div>
+<div id="cursor-trails"></div>
+
+<script>
+const cursor = document.querySelector('.cursor');
+const trailContainer = document.getElementById('cursor-trails');
+const trailCount = 12;  // more dots = smoother
+const trails = [];
+
+// Create trail elements
+for (let i = 0; i < trailCount; i++) {
+  const dot = document.createElement('div');
+  dot.classList.add('cursor-trail');
+  dot.style.opacity = (1 - i / trailCount).toString();
+  trailContainer.appendChild(dot);
+  trails.push(dot);
+}
+
+let mouseX = 0, mouseY = 0;
+let posX = Array(trailCount).fill(0);
+let posY = Array(trailCount).fill(0);
+
+// Track mouse
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursor.style.top = mouseY + 'px';
+  cursor.style.left = mouseX + 'px';
+});
+
+// Smooth animation using easing
+function animateTrail() {
+  for (let i = 0; i < trails.length; i++) {
+    const speed = 0.15 + i * 0.01; // smaller = slower, gives smooth effect
+    posX[i] += (mouseX - posX[i]) * speed;
+    posY[i] += (mouseY - posY[i]) * speed;
+    trails[i].style.transform = `translate(${posX[i]}px, ${posY[i]}px)`;
+  }
+  requestAnimationFrame(animateTrail);
+}
+
+animateTrail();
+
+const scrollElements = document.querySelectorAll('.scroll-element, .scroll-element-left, .scroll-element-right');
+
+const observerOptions = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.15 // 15% of element visible
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // stop observing for performance
+    }
+  });
+}, observerOptions);
+
+scrollElements.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
+
+
